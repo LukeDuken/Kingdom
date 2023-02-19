@@ -151,6 +151,7 @@ MonoBehaviour:
   swordAttack: {fileID: 1986192672658311276}
   rb: {fileID: 8716641679729694295}
   animator: {fileID: 3343765667277457569}
+  spriteRenderer: {fileID: 3802442185154548819}
   canMove: 1
 --- !u!50 &8716641679729694295
 Rigidbody2D:
@@ -165,7 +166,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 25
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -306,7 +307,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -339,4 +340,5 @@ MonoBehaviour:
   AttackOffsetRight: 0.16
   AttackOffsetTop: 0
   AttackOffsetDown: -0.16
-  attackDirection: 0
+  SwordDamage: 1
+  attackDirection: 3

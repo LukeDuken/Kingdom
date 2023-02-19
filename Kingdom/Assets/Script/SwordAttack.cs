@@ -10,6 +10,7 @@ public class SwordAttack : MonoBehaviour
     public float AttackOffsetRight = 0.16f;
     public float AttackOffsetTop = 0.0f;
     public float AttackOffsetDown = -0.16f;
+    public float SwordDamage = 1f;
 
     public enum AttackDirection
     {
@@ -20,7 +21,6 @@ public class SwordAttack : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        swordCollider = GetComponent<Collider2D>();
         AttackOffset = transform.localPosition;
     }
     public void SwordSwing()
@@ -39,7 +39,7 @@ public class SwordAttack : MonoBehaviour
                 break;          
         }
     }
-    // Update is called once per frame
+    // Move the collider base on the attack direction
     private void AttackRight()
     {
         transform.localPosition = new Vector3(AttackOffsetLeft, AttackOffset.y);
@@ -62,6 +62,8 @@ public class SwordAttack : MonoBehaviour
         transform.localPosition = new Vector3(AttackOffset.x, AttackOffsetDown);
         print("attackdown");
     }
+
+    //Start and End attack function for animations
     public void StartAttack()
     {
         swordCollider.enabled = true;
@@ -71,5 +73,11 @@ public class SwordAttack : MonoBehaviour
     {
         swordCollider.enabled = false;
         print("stopAttack");
+    }
+
+    //Check for enemeies rigid body and send on hit to the the game object
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        collision.collider.SendMessage("OnHit", SwordDamage);
     }
 }

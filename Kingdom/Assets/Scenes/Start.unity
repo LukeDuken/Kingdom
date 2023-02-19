@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412316701}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.01, y: -0.005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4214,6 +4214,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &852854735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5764341188333163653, guid: 42dd74bd6daa44d4bb709ad60ac35e82, type: 3}
+  m_PrefabInstance: {fileID: 6974100060772076508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &852854736 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7052346532451618339, guid: 42dd74bd6daa44d4bb709ad60ac35e82, type: 3}
+  m_PrefabInstance: {fileID: 6974100060772076508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &852854742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852854735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f01ff74a1e02364195bc28b76d47391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 852854736}
+  _health: 3
 --- !u!1 &893711502
 GameObject:
   m_ObjectHideFlags: 0
@@ -4749,7 +4773,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5764341188333163653, guid: 42dd74bd6daa44d4bb709ad60ac35e82, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 852854742}
   m_SourcePrefab: {fileID: 100100000, guid: 42dd74bd6daa44d4bb709ad60ac35e82, type: 3}
 --- !u!1001 &8949576610035413958
 PrefabInstance:
@@ -4811,6 +4838,10 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 8949576610035413959}
+    - target: {fileID: 8232456240553387955, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
