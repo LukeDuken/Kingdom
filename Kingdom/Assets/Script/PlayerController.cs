@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movementInput;
 
-    SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+       
     }
     void Start()
     {
@@ -51,13 +51,14 @@ public class PlayerController : MonoBehaviour
                 {
                     success = TryMove(new Vector2(0, movementInput.y));
                 }
-                animator.SetBool("IsMoving", success);
-                animator.SetFloat("HorizontalMovement", movementInput.x);
-                animator.SetFloat("VerticalMovement", movementInput.y);
+               
+                animator.SetFloat("Horizontal", movementInput.x);
+                animator.SetFloat("Vertical", movementInput.y);
+                animator.SetFloat("Speed", movementInput.sqrMagnitude);
             }
             else
             {
-                animator.SetBool("IsMoving", false);
+                animator.SetFloat("Speed", movementInput.sqrMagnitude);
             }
             //set direction of sprite and attack to movement direction
             if (movementInput.x < 0)
@@ -122,7 +123,7 @@ public class PlayerController : MonoBehaviour
     //Sword Attack
     void OnFire() 
     {
-        animator.SetTrigger("SwordAttack");   
+        animator.SetTrigger("Attack");   
     }
     public void EndAttack()
     {
