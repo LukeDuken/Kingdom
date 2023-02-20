@@ -83,11 +83,15 @@ public class SwordAttack : MonoBehaviour
         if (damagableObject != null)
         {
             //calculate direction between character and slime
-            Vector3 parentPosition = gameObject.GetComponentInParent<Transform>().position;
+            Vector3 parentPosition = transform.parent.position;
 
+            //Offset for collision direction changes the direction where the force comes from (close to the player)
             Vector2 direction = (Vector2)(collider.gameObject.transform.position - parentPosition).normalized;
+
+            //knockback is in direction of swordCollider towards collider
             Vector2 knockback = direction * knockbackForce;
-            // send Onhit through interface
+
+            // After making sure the collider has a script that implements IDamagable, we can run the OnHit implementation and pass over our Vector 2 force
             damagableObject.OnHit(SwordDamage, knockback);
         }
         else

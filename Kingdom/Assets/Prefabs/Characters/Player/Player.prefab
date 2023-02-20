@@ -132,7 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a85cfe56f7f524689ca04e276d4644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 25
+  maxSpeed: 8
+  idleFriction: 0.9
   collisionOffset: 0.02
   movementFilter:
     useTriggers: 0
@@ -212,18 +214,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004440427, y: -0.16095826}
+  m_Offset: {x: 0, y: -0.08}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.48}
+    oldSize: {x: 0.15, y: 0.21}
     newSize: {x: 0.48, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.09220016, y: 0.018949166}
+  m_Size: {x: 0.09, y: 0.02}
   m_EdgeRadius: 0
 --- !u!95 &3343765667277457569
 Animator:
@@ -271,7 +273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3307365367695681575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.08, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -338,7 +340,7 @@ MonoBehaviour:
   swordCollider: {fileID: 8232456240553387955}
   AttackOffsetLeft: -0.16
   AttackOffsetRight: 0.16
-  AttackOffsetTop: 0
+  AttackOffsetTop: 0.016
   AttackOffsetDown: -0.16
   SwordDamage: 1
   knockbackForce: 150

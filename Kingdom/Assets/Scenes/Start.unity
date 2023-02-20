@@ -4832,9 +4832,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 34675440830958678, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: m_Size.x
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 34675440830958678, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: m_Size.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 34675440830958678, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 34675440830958678, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 186994059805629172, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059313066556288026, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059313066556288026, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986192672658311276, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: AttackOffsetTop
+      value: 0.016
       objectReference: {fileID: 0}
     - target: {fileID: 2235567880092275989, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
       propertyPath: m_RootOrder
@@ -4878,6 +4906,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2235567880092275989, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726545490122951355, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: maxSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726545490122951355, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: moveSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8232456240553387955, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8232456240553387955, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -44,7 +44,7 @@ public class Slime : MonoBehaviour, IDamagable
         set 
         { 
             _targetable = value;
-            rb.simulated = value;
+            //rb.simulated = value;
             physicsCollider.enabled= value;
 
 

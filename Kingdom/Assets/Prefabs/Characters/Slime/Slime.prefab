@@ -193,7 +193,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7052346532451618339}
-  rb: {fileID: 968615647217079643}
   _health: 3
   _targetable: 1
-  collider: {fileID: 2538684859599911671}
