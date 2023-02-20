@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8716641679729694295}
   - component: {fileID: 34675440830958678}
   - component: {fileID: 3343765667277457569}
+  - component: {fileID: 4582028211743124555}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -247,6 +248,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &4582028211743124555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186994059805629172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6b683645f7cca4c8fc08d2a646210c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3307365367695681575
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3307365367695681575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -323,7 +336,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.2}
+  m_Size: {x: 0.15, y: 0.08}
   m_EdgeRadius: 0
 --- !u!114 &1986192672658311276
 MonoBehaviour:
@@ -338,10 +351,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordCollider: {fileID: 8232456240553387955}
-  AttackOffsetLeft: -0.16
-  AttackOffsetRight: 0.16
-  AttackOffsetTop: 0.016
-  AttackOffsetDown: -0.16
+  AttackOffsetLeft: -0.1
+  AttackOffsetRight: 0.1
+  AttackOffsetTop: 0.1
+  AttackOffsetDown: -0.1
   SwordDamage: 1
   knockbackForce: 150
   attackDirection: 3

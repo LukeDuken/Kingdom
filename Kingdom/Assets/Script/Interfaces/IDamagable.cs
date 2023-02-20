@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IDamagable 
+public interface IDamageable 
 {
    public float Health { set; get; }
     public bool Targetable { set; get; }

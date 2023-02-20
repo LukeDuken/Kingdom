@@ -79,7 +79,7 @@ public class SwordAttack : MonoBehaviour
     //Check for enemeies rigid body and send on hit to the the game object
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        IDamagable damagableObject = collider.GetComponent<IDamagable>();
+        IDamageable damagableObject = collider.GetComponent<IDamageable>();
         if (damagableObject != null)
         {
             //calculate direction between character and slime
