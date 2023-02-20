@@ -25,7 +25,10 @@ public class Slime : MonoBehaviour
         }
         get { return _health; }
     }
-
+    public void Start()
+    {
+        animator.SetBool("IsAlive", true);
+    }
     private void OnHit(float damage)
     {
         Debug.Log("slime hit for" + damage);

@@ -66,18 +66,19 @@ public class SwordAttack : MonoBehaviour
     //Start and End attack function for animations
     public void StartAttack()
     {
-        swordCollider.enabled = true;
+       
         print("startAttack");
     }
     public void StopAttack()
     {
-        swordCollider.enabled = false;
+      
         print("stopAttack");
     }
 
     //Check for enemeies rigid body and send on hit to the the game object
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        collision.collider.SendMessage("OnHit", SwordDamage);
+        collider.SendMessage("OnHit", SwordDamage);
+        Debug.Log("hit");
     }
 }
