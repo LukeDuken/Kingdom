@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        swordAttack.attackDirection = SwordAttack.AttackDirection.Down;
+        //swordAttack.attackDirection = SwordAttack.AttackDirection.Down;
     }
     void Start()
     {
@@ -47,14 +47,10 @@ public class PlayerController : MonoBehaviour
        // if movement input is not 0 try to move
             if (movementInput != Vector2.zero)
             {
-                rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput *moveSpeed* Time.deltaTime), maxSpeed);    
-               
-                animator.SetFloat("Horizontal", movementInput.x);
-                animator.SetFloat("Vertical", movementInput.y);
-                //play movement animation only when over a speed value 
-                animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
-                //set direction of sprite and attack to movement direction
-                if (movementInput.x < 0)
+                rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput *moveSpeed* Time.deltaTime), maxSpeed);
+                UpdateAnimatorParameters();
+            //set direction of sprite and attack to movement direction
+            if (movementInput.x < 0)
                 {
                     spriteRenderer.flipX = true;
                     swordAttack.attackDirection = SwordAttack.AttackDirection.Right;
@@ -77,14 +73,22 @@ public class PlayerController : MonoBehaviour
                     swordAttack.attackDirection = SwordAttack.AttackDirection.Down;
 
                 }
-        }
-            else
-            {
+            }
+        else
+        {
             //no movement so interpolate velocity towards 0
             rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
-            animator.SetFloat("Speed", movementInput.sqrMagnitude);
-            }
-            
+            animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
+        }
+        
+    }
+    void UpdateAnimatorParameters()
+    {
+        //play movement animation only when over a speed value 
+        animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
+        //pick right movement animation according to axis magnitude
+        animator.SetFloat("Horizontal", movementInput.x);
+        animator.SetFloat("Vertical", movementInput.y);
     }
     void OnMove(InputValue movementValue) 
     {
