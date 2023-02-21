@@ -67,7 +67,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.75
 --- !u!114 &6689734808207444242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,8 +279,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   knockbackForce: 1.5
-  moveSpeed: 50
+  moveSpeed: 75
   aggro: {fileID: 6689734808207444242}
+  animator: {fileID: 7052346532451618339}
+  spriteRenderer: {fileID: 206663602628083665}
 --- !u!114 &6302804907503086954
 MonoBehaviour:
   m_ObjectHideFlags: 0

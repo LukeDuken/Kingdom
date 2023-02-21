@@ -14,6 +14,10 @@ public class Slime : MonoBehaviour
 
     Rigidbody2D rb;
 
+    public Animator animator;
+
+    public SpriteRenderer spriteRenderer;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,6 +31,24 @@ public class Slime : MonoBehaviour
             Vector2 direction = (aggro.detectObjs[0].transform.position - transform.position).normalized;
             //move towards the detected object
             rb.AddForce(direction * moveSpeed * Time.deltaTime);
+            animator.SetFloat("Horizontal", direction.x);
+            animator.SetFloat("Vertical", rb.velocity.y);
+            animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
+            if (rb.velocity.x < 0)
+            {
+                spriteRenderer.flipX = true;
+               
+            }
+            else if (rb.velocity.x > 0)
+            {
+                spriteRenderer.flipX = false;
+                
+            }
+           
+        }
+        else
+        {
+            animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
         }
     }
     void OnCollisionEnter2D(Collision2D col)
