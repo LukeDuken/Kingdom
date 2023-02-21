@@ -53,36 +53,36 @@ public class PlayerController : MonoBehaviour
                 //add a force for move player around
                 rb.AddForce(movementInput* moveSpeed * Time.deltaTime);
                 UpdateAnimatorParameters();
-            if(rb.velocity.magnitude > maxSpeed)
-            {
-                //because maxSpeed is not a vector2 we need to set limitedSpeed and use the vector2 values for float
-                float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
-                rb.velocity = rb.velocity.normalized * limitedSpeed;
-            }
+                if(rb.velocity.magnitude > maxSpeed)
+                {
+                    //because maxSpeed is not a vector2 we need to set limitedSpeed and use the vector2 values for float
+                    float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
+                    rb.velocity = rb.velocity.normalized * limitedSpeed;
+                }
             //set direction of sprite and attack to movement direction
-            if (movementInput.x < 0)
-                {
-                    spriteRenderer.flipX = true;
-                    swordAttack.attackDirection = SwordAttack.AttackDirection.Right;
-                }
-                else if (movementInput.x > 0)
-                {
-                    spriteRenderer.flipX = false;
-                    swordAttack.attackDirection = SwordAttack.AttackDirection.Left;
+                if (movementInput.x < 0)
+                    {
+                        spriteRenderer.flipX = true;
+                        swordAttack.attackDirection = SwordAttack.AttackDirection.Right;
+                    }
+                    else if (movementInput.x > 0)
+                    {
+                        spriteRenderer.flipX = false;
+                        swordAttack.attackDirection = SwordAttack.AttackDirection.Left;
 
-                }
-                else if (movementInput.y > 0)
-                {
-                    spriteRenderer.flipX = false;
-                    swordAttack.attackDirection = SwordAttack.AttackDirection.Up;
+                    }
+                    else if (movementInput.y > 0)
+                    {
+                        spriteRenderer.flipX = false;
+                        swordAttack.attackDirection = SwordAttack.AttackDirection.Up;
 
-                }
-                else if (movementInput.y < 0)
-                {
-                    spriteRenderer.flipX = false;
-                    swordAttack.attackDirection = SwordAttack.AttackDirection.Down;
+                    }
+                    else if (movementInput.y < 0)
+                    {
+                        spriteRenderer.flipX = false;
+                        swordAttack.attackDirection = SwordAttack.AttackDirection.Down;
 
-                }
+                    }
             }
         else
         {
