@@ -8,6 +8,7 @@ public class HealthManager : MonoBehaviour, IDamageable
     Rigidbody2D rb;
     public float _health = 3f;
     public bool _targetable = true;
+    public bool disableSimulation = false;
     Collider2D physicsCollider;
 
     public void Start()
@@ -44,7 +45,11 @@ public class HealthManager : MonoBehaviour, IDamageable
         set
         {
             _targetable = value;
-            //rb.simulated = value;
+            //For player or characters that we want to stop on death
+            if (disableSimulation)
+            {
+                rb.simulated = false;
+            }
             physicsCollider.enabled = value;
 
 
@@ -58,7 +63,8 @@ public class HealthManager : MonoBehaviour, IDamageable
     {
         Health -= damage;
         //apply force to the slime
-        rb.AddForce(knockback);
+        rb.AddForce(knockback, ForceMode2D.Impulse);
+        Debug.Log("Force:" + knockback);
     }
 
     public void OnObjectDestroy()

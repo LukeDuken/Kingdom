@@ -94,10 +94,6 @@ public class SwordAttack : MonoBehaviour
             // After making sure the collider has a script that implements IDamagable, we can run the OnHit implementation and pass over our Vector 2 force
             damagableObject.OnHit(SwordDamage, knockback);
         }
-        else
-        {
-            Debug.LogWarning("Collider does not implement IDamagable");
-        }
 
     }
 }

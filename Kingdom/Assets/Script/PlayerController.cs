@@ -47,8 +47,18 @@ public class PlayerController : MonoBehaviour
        // if movement input is not 0 try to move
             if (movementInput != Vector2.zero)
             {
-                rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput *moveSpeed* Time.deltaTime), maxSpeed);
+                // setting velocity directly
+                //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput *moveSpeed* Time.deltaTime), maxSpeed);
+
+                //add a force for move player around
+                rb.AddForce(movementInput* moveSpeed * Time.deltaTime);
                 UpdateAnimatorParameters();
+            if(rb.velocity.magnitude > maxSpeed)
+            {
+                //because maxSpeed is not a vector2 we need to set limitedSpeed and use the vector2 values for float
+                float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
+                rb.velocity = rb.velocity.normalized * limitedSpeed;
+            }
             //set direction of sprite and attack to movement direction
             if (movementInput.x < 0)
                 {
