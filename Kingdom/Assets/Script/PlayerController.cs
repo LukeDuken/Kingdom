@@ -64,27 +64,35 @@ public class PlayerController : MonoBehaviour
             //set direction of sprite and attack to movement direction
                 if (movementInput.x < 0)
                     {
-                        spriteRenderer.flipX = true;
+                        
                         swordAttack.attackDirection = SwordAttack.AttackDirection.Right;
                     }
                     else if (movementInput.x > 0)
                     {
-                        spriteRenderer.flipX = false;
+                     
                         swordAttack.attackDirection = SwordAttack.AttackDirection.Left;
 
                     }
                     else if (movementInput.y > 0)
-                    {
-                        spriteRenderer.flipX = false;
+                    {                   
                         swordAttack.attackDirection = SwordAttack.AttackDirection.Up;
 
                     }
                     else if (movementInput.y < 0)
-                    {
-                        spriteRenderer.flipX = false;
+                    {                    
                         swordAttack.attackDirection = SwordAttack.AttackDirection.Down;
 
                     }
+
+                // still can move once when is death
+                if (rb.velocity.x < 0)
+                {
+                    spriteRenderer.flipX = true;
+                }
+                else if (rb.velocity.x > 0) 
+                {
+                    spriteRenderer.flipX = false;
+                }
             }
         else
         {

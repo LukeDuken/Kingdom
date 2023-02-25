@@ -44,36 +44,34 @@ public class SwordAttack : MonoBehaviour
     private void AttackRight()
     {
         transform.localPosition = new Vector3(AttackOffsetLeft, AttackOffset.y);
-        print("attackRight");
+        
     }
 
     private void AttackLeft()
     {
         transform.localPosition = new Vector3(AttackOffsetRight, AttackOffset.y);
-        print("attackLeft");
+        
     }
 
     private void AttackUp()
     {
         transform.localPosition = new Vector3(AttackOffset.x, AttackOffsetTop);
-        print("attackTop");
+        
     }
     private void AttackDown()
     {
         transform.localPosition = new Vector3(AttackOffset.x, AttackOffsetDown);
-        print("attackdown");
+        
     }
 
     //Start and End attack function for animations
     public void StartAttack()
     {
        
-        print("startAttack");
     }
     public void StopAttack()
     {
       
-        print("stopAttack");
     }
 
     //Check for enemeies rigid body and send on hit to the the game object
