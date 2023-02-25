@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class HealthManager : MonoBehaviour, IDamageable
@@ -10,6 +11,9 @@ public class HealthManager : MonoBehaviour, IDamageable
     public bool _targetable = true;
     public bool disableSimulation = false;
     Collider2D physicsCollider;
+    public float InvincibilityTime = 0.25f;
+    public bool canTurnInvincible = false;
+    private float invincibleTimeElapsed = 0f;
 
     public void Start()
     {
@@ -55,20 +59,68 @@ public class HealthManager : MonoBehaviour, IDamageable
 
         }
     }
-    public void OnHit(float damage)
+
+    public bool Invincible
     {
-        Health -= damage;
+        get
+        {
+            return _invincible;
+
+        }
+
+        set 
+        {
+            _invincible = value;
+            if (_invincible == true)
+            {
+                invincibleTimeElapsed = 0f;
+            }
+        }
     }
+    public bool _invincible = false;
+
     public void OnHit(float damage, Vector2 knockback)
     {
-        Health -= damage;
-        //apply force to the slime
-        rb.AddForce(knockback, ForceMode2D.Impulse);
-        Debug.Log("Force:" + knockback);
+        if (!Invincible)
+        {
+            Health -= damage;
+            //apply force to the slime
+            rb.AddForce(knockback, ForceMode2D.Impulse);
+            if(canTurnInvincible)
+            {
+                //activate invincibility and timer
+                Invincible = true;
+            }
+        }
+    }
+    public void OnHit(float damage)
+    {
+        if (!Invincible)
+        {
+            Health -= damage;
+            if (canTurnInvincible)
+            {
+                //activate invincibility and timer
+                Invincible = true;
+            }
+        }
     }
 
     public void OnObjectDestroy()
     {
         Destroy(gameObject);
     }
+
+    public void FixedUpdate()
+    {
+        if(Invincible)
+        {
+            invincibleTimeElapsed += Time.deltaTime;
+            if(invincibleTimeElapsed> InvincibilityTime ) 
+            {
+                Invincible= false;
+            }
+        }
+    }
+
 }

@@ -47,11 +47,13 @@ public class PlayerController : MonoBehaviour
        // if movement input is not 0 try to move
             if (movementInput != Vector2.zero)
             {
-                // setting velocity directly
-                //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput *moveSpeed* Time.deltaTime), maxSpeed);
+            // setting velocity directly
+            //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput *moveSpeed* Time.deltaTime), maxSpeed);
 
-                //add a force for move player around
-                rb.AddForce(movementInput* moveSpeed * Time.deltaTime);
+            //add a force for move player around
+            //rb.AddForce(movementInput* moveSpeed * Time.deltaTime);
+            rb.AddForce(movementInput * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+
                 UpdateAnimatorParameters();
                 if(rb.velocity.magnitude > maxSpeed)
                 {

@@ -23705,7 +23705,7 @@ Tilemap:
       - {fileID: 1530030540, guid: 83fa7dd383a0d3e4abdb01fc4161af15, type: 3}
       - {fileID: -2077550634, guid: 4a42d696a91e77e4e9a073b854311a77, type: 3}
       - {fileID: 2028307312, guid: 57e383076ac7d5c4091241a093a008b3, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: -16, z: 0}
@@ -24491,6 +24491,7 @@ GameObject:
   - component: {fileID: 914850547}
   - component: {fileID: 914850549}
   - component: {fileID: 914850548}
+  - component: {fileID: 914850550}
   m_Layer: 0
   m_Name: FG_Shadows
   m_TagString: Untagged
@@ -41186,6 +41187,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &914850550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914850546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b97b0ab34fa1a4dbc4d56ad3880907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 893711505}
+  relativeMoveX: 0.05
+  relativeMoveY: 0.1
+  lockY: 0
 --- !u!1001 &1052975954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43583,6 +43600,14 @@ PrefabInstance:
     - target: {fileID: 2235567880092275989, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582028211743124555, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: InvincibilityTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582028211743124555, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
+      propertyPath: canTurnInvincible
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8716641679729694295, guid: 5e8d9b7b7f3861342ba15fc17e50fb44, type: 3}
       propertyPath: m_LinearDrag
