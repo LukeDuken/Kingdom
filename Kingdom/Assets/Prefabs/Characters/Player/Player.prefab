@@ -169,8 +169,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1.5
-  m_AngularDrag: 1
+  m_LinearDrag: 2
+  m_AngularDrag: 1.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -264,6 +264,9 @@ MonoBehaviour:
   _health: 3
   _targetable: 1
   disableSimulation: 1
+  InvincibilityTime: 0.5
+  canTurnInvincible: 1
+  _invincible: 0
 --- !u!1 &3307365367695681575
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +343,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.08}
+  m_Size: {x: 0.15, y: 0.12}
   m_EdgeRadius: 0
 --- !u!114 &1986192672658311276
 MonoBehaviour:
