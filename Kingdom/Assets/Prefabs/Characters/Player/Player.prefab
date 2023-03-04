@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 34675440830958678}
   - component: {fileID: 3343765667277457569}
   - component: {fileID: 4582028211743124555}
+  - component: {fileID: 427797135}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -261,12 +262,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3343765667277457569}
-  _health: 3
+  _health: 5
   _targetable: 1
   disableSimulation: 1
   InvincibilityTime: 0.5
   canTurnInvincible: 1
   _invincible: 0
+--- !u!114 &427797135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186994059805629172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f02b14848ee8d54ebe522ef45d123dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 5
+  emptyHeart: {fileID: 965578164, guid: aa3ca14b64b89ad41bea7bd2235a3b69, type: 3}
+  fullHeart: {fileID: -194912724, guid: aa3ca14b64b89ad41bea7bd2235a3b69, type: 3}
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  healthManager: {fileID: 4582028211743124555}
 --- !u!1 &3307365367695681575
 GameObject:
   m_ObjectHideFlags: 0
