@@ -6,8 +6,10 @@ public class Heal : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    public Animator animator;
+    public Animator animatorObject;
+    public Animator animatorShadow;
     public float heal = 1.0f;
+    public Collider2D col;
 
     // Start is called before the first frame update
     void Start()
@@ -20,19 +22,20 @@ public class Heal : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        Collider2D collider = col.collider;
-        IDamageable damageable = collider.GetComponent<IDamageable>();
-
-        if (damageable != null)
+        IDamageable damageableObject = collider.GetComponent<IDamageable>();
+        if (damageableObject != null)
         {
             // After making sure the collider has a script that implements IDamagable, we can run the OnHeal implementation and pass over our Vector 2 force
-            damageable.OnHeal(heal);
+            damageableObject.OnHeal(heal);
             print("heal");
-            animator.SetBool("collected", true);
-
+            col.enabled = false;
+            animatorObject.SetBool("collected", true);
+            animatorShadow.SetBool("collected", true);
+            Invoke(nameof(OnObjectDestroy), 1);
         }
+        
     }
     public void OnObjectDestroy()
     {

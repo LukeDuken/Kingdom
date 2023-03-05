@@ -77,8 +77,8 @@ public class SwordAttack : MonoBehaviour
     //Check for enemeies rigid body and send on hit to the the game object
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        IDamageable damagableObject = collider.GetComponent<IDamageable>();
-        if (damagableObject != null)
+        IDamageable damageableObject = collider.GetComponent<IDamageable>();
+        if (damageableObject != null)
         {
             //calculate direction between character and slime
             Vector3 parentPosition = transform.parent.position;
@@ -90,7 +90,7 @@ public class SwordAttack : MonoBehaviour
             Vector2 knockback = direction * knockbackForce;
 
             // After making sure the collider has a script that implements IDamagable, we can run the OnHit implementation and pass over our Vector 2 force
-            damagableObject.OnHit(SwordDamage, knockback);
+            damageableObject.OnHit(SwordDamage, knockback);
         }
 
     }
