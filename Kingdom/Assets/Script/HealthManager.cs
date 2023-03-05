@@ -8,6 +8,7 @@ public class HealthManager : MonoBehaviour, IDamageable
     public Animator animator;
     Rigidbody2D rb;
     public float _health = 3f;
+    public float maxHealth = 5f;
     public bool _targetable = true;
     public bool disableSimulation = false;
     Collider2D physicsCollider;
@@ -104,6 +105,14 @@ public class HealthManager : MonoBehaviour, IDamageable
                 Invincible = true;
             }
         }
+    }
+
+    public void OnHeal(float heal)
+    {
+        if (Health < maxHealth)
+        {
+            Health += heal;
+        }       
     }
 
     public void OnObjectDestroy()
