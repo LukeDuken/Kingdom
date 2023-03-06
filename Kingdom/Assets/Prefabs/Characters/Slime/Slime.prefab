@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 7052346532451618339}
   - component: {fileID: 852854742}
   - component: {fileID: 6302804907503086954}
+  - component: {fileID: 2578585311608268988}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -297,8 +298,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7052346532451618339}
   _health: 3
+  maxHealth: 5
   _targetable: 1
   disableSimulation: 0
   InvincibilityTime: 0.25
   canTurnInvincible: 0
   _invincible: 0
+--- !u!114 &2578585311608268988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5764341188333163653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841c40987b727fa478673dcb83bdc61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootList:
+  - {fileID: 11400000, guid: 4696b15516c34bf4cb2ddde2ce0be100, type: 2}

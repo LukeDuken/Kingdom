@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7df1e9fc770f754b9693e1caaa598f0, type: 3}
+  m_Name: Heart
+  m_EditorClassIdentifier: 
+  lootObj: {fileID: 1992920475573385941, guid: c442018be2d2ccf42b0cf19d60a9ce0c, type: 3}
+  lootName: Heart
+  dropChance: 60
