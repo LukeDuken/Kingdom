@@ -115,9 +115,8 @@ public class HealthManager : MonoBehaviour, IDamageable
         }       
     }
 
-    public void OnObjectDestroy()
+    public virtual void OnObjectDestroy()
     {
-        GetComponent<LootBag>().InstantiateLoot(transform.position);
         
         Destroy(gameObject);
     }

@@ -12,7 +12,7 @@ public class Slime : MonoBehaviour
 
     public EnemyAggro aggro;
 
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     public Animator animator;
 

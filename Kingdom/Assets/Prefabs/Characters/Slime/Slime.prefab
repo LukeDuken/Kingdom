@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2538684859599911671}
   - component: {fileID: 7052346532451618339}
   - component: {fileID: 852854742}
-  - component: {fileID: 6302804907503086954}
+  - component: {fileID: 7260271069571617121}
   - component: {fileID: 2578585311608268988}
   m_Layer: 0
   m_Name: Slime
@@ -284,7 +284,7 @@ MonoBehaviour:
   aggro: {fileID: 6689734808207444242}
   animator: {fileID: 7052346532451618339}
   spriteRenderer: {fileID: 206663602628083665}
---- !u!114 &6302804907503086954
+--- !u!114 &7260271069571617121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5764341188333163653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb6b683645f7cca4c8fc08d2a646210c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b6fdd3cd96c7754babbd8d06b2dd9f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7052346532451618339}

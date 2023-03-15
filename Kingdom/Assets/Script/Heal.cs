@@ -27,7 +27,7 @@ public class Heal : MonoBehaviour
         IDamageable damageableObject = collider.GetComponent<IDamageable>();
         if (damageableObject != null)
         {
-            // After making sure the collider has a script that implements IDamagable, we can run the OnHeal implementation and pass over our Vector 2 force
+            // After making sure the collider has a script that implements IDamagable, we can run the OnHeal implementation 
             damageableObject.OnHeal(heal);
             print("heal");
             col.enabled = false;
