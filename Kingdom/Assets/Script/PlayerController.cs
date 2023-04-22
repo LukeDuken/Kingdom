@@ -120,6 +120,11 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetTrigger("Attack");   
     }
+
+    void OnCHarge()
+    {
+        animator.SetTrigger("Attack");
+    }
     public void EndAttack()
     {
         canMove = true;

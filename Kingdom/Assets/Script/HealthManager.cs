@@ -33,7 +33,8 @@ public class HealthManager : MonoBehaviour, IDamageable
             _health = value;
             if (_health <= 0)
             {
-                Targetable = false;
+                //with this targetable active the enemy ignore collisions on death and can go over walls. Now it can't fall over pits
+                //Targetable = false;
                 animator.SetBool("IsAlive", false);
             }
 
