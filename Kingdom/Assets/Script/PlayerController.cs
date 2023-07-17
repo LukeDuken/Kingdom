@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 //Take and handles input and movement for a player character
 public class PlayerController : MonoBehaviour
 {
+    public ParticleSystem Dust;
+
     public float moveSpeed = 1f;
 
     public float maxSpeed = 5f;
@@ -40,7 +42,6 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-
     }
     private void FixedUpdate()
     {
@@ -54,8 +55,10 @@ public class PlayerController : MonoBehaviour
             //rb.AddForce(movementInput* moveSpeed * Time.deltaTime);
             rb.AddForce(movementInput * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
 
-                UpdateAnimatorParameters();
-                if(rb.velocity.magnitude > maxSpeed)
+            UpdateAnimatorParameters();
+            
+
+                if (rb.velocity.magnitude > maxSpeed)
                 {
                     //because maxSpeed is not a vector2 we need to set limitedSpeed and use the vector2 values for float
                     float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
@@ -84,10 +87,11 @@ public class PlayerController : MonoBehaviour
 
                     }
 
-                // still can move once when is death
+                // still can move once when is dead
                 if (rb.velocity.x < 0)
                 {
                     spriteRenderer.flipX = true;
+
                 }
                 else if (rb.velocity.x > 0) 
                 {
@@ -113,6 +117,11 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue movementValue) 
     {
         movementInput =movementValue.Get<Vector2>();
+        //qua spawno la particle di polvere per il movimento ma non sono super contento.
+        //Mi sarebbe piaciuto legaro alle varianti di direzione per le sgommate.
+        //tipo anche quando subisci un knockback.
+        Dust.Play();
+        print("dust");
     }
 
     //Sword Attack
@@ -136,5 +145,10 @@ public class PlayerController : MonoBehaviour
         swordAttack.StartAttack();
         swordAttack.SwordSwing();
 
+    }
+
+    void CreateDust()
+    {
+        Dust.Play();
     }
 }
