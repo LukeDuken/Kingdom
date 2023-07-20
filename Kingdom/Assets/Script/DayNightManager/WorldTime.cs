@@ -9,7 +9,7 @@ namespace WorldTime
     {
         //to notify another script that the time has changed
         public event EventHandler<TimeSpan> WorldTimeChanged;
-
+        public int startTime = 0;
 
         [SerializeField]
         private float _dayLenght; //how long the day is in second
@@ -19,6 +19,9 @@ namespace WorldTime
 
         private void Start()
         {
+            //when the day night cycle start
+            _currentTime += TimeSpan.FromMinutes(startTime);
+            WorldTimeChanged?.Invoke(this, _currentTime);
             StartCoroutine(AddMinute()); //Start coroutine
         }
 
