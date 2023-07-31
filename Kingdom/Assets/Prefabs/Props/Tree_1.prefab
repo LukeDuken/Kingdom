@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 0b2348a3a0dd6e243a0056f23eb63b85, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1151702327
   m_SortingLayer: 1
-  m_SortingOrder: 15
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1292748326, guid: 0a211d7180cd1d149b45f7be48fd8790, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -319,4 +319,4 @@ MonoBehaviour:
   - {x: -0.09666884, y: -0.002157569, z: 0}
   m_ShapePathHash: -831736793
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29788
+  m_InstanceId: -1366
