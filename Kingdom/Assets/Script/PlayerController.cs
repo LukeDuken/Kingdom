@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
         //Mi sarebbe piaciuto legaro alle varianti di direzione per le sgommate.
         //tipo anche quando subisci un knockback.
         Dust.Play();
-        print("dust");
+        //print("dust");
     }
 
     //Sword Attack
