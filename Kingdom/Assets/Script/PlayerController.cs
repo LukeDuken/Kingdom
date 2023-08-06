@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     // Each frame of physics, what percentage of the speed should be shaved off the velocity out of 1 (100%)
     public float idleFriction = 0.9f;
 
-    public float collisionOffset = 0.05f;
+    //public float collisionOffset = 0.05f;
 
     public ContactFilter2D movementFilter;
 
