@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(TopDownMovementController))]
+[RequireComponent(typeof(MovementPriorityHandler))]
+[RequireComponent(typeof(DodgeController))]
 public class PlayerControllerNew : MonoBehaviour, PlayerInput_Actions.IPlayerActions
 {
     private PlayerInput_Actions _playerInput_Actions;
-    private TopDownMovementController _movementController;
+    private MovementPriorityHandler _movementController;
+    private DodgeController _dodgeController;
     // Start is called before the first frame update
     private void Awake()
     {
         _playerInput_Actions = new PlayerInput_Actions();
-        _movementController = GetComponent<TopDownMovementController>();
+        _movementController = GetComponent<MovementPriorityHandler>();
+        _dodgeController = GetComponent<DodgeController>();
 
     }
-
     // Update is called once per frame
     private void OnEnable()
     {
@@ -31,17 +33,10 @@ public class PlayerControllerNew : MonoBehaviour, PlayerInput_Actions.IPlayerAct
         _playerInput_Actions.Player.RemoveCallbacks(this);
     }
 
-    private void Update()
-    {
-        //chiamiamo l'input in update perchè viene utilizzato sempre anche se rimane lo stesso
-        var direction = _playerInput_Actions.Player.Move.ReadValue<Vector2>();
-        _movementController.Move(direction);
-    }
-
     //questi metodi sono derivati dall'utilizzo dell'interfaccia di Unity Input system
     public void OnMove(InputAction.CallbackContext context)
     {
-        
+        _movementController.SetDirection(context.ReadValue<Vector2>());
     }
 
     public void OnLook(InputAction.CallbackContext context)
@@ -52,5 +47,10 @@ public class PlayerControllerNew : MonoBehaviour, PlayerInput_Actions.IPlayerAct
     public void OnFire(InputAction.CallbackContext context)
     {
         //throw new System.NotImplementedException();
+    }
+
+    public void OnDodge(InputAction.CallbackContext context)
+    {
+        _dodgeController.Dodge();
     }
 }

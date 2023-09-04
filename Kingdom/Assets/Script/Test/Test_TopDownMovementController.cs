@@ -15,9 +15,10 @@ public class Test_TopDownMovementController : MonoBehaviour
 
     // Qua va bene l'update perchè il fixed update deve rimanere leggero e quindi
     // va chiamato solo quando aggiorna i dati che ci interessano puliti
-    void Update()
+    void FixedUpdate()
     {
         //Chiamo il metodo move sul movement controller
-        _movementController.Move(_setDirection);
+        _movementController.SetMovementDirection(_setDirection);
+        _movementController.PerformMovement();
     }
 }
